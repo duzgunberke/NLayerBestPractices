@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NLayer.Core
+namespace NLayer.Core.DTOs
 {
-    public class Product:BaseEntity
+    public class ProductDto:BaseDto
     {
+
         public string Name { get; set; }
 
         public int Stock { get; set; }
@@ -15,9 +16,5 @@ namespace NLayer.Core
         public decimal Price { get; set; }
 
         public int CategoryId { get; set; }
-
-        public Category Category { get; set; }
-
-        public ProductFeature ProductFeature { get; set; }
     }
 }
