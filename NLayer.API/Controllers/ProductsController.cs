@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using NLayer.API.Filters;
 using NLayer.Core.DTOs;
 using NLayer.Core.Model;
 using NLayer.Core.Services;
 
 namespace NLayer.API.Controllers
 {
-    
     public class ProductsController : CustomBaseController
     {
         private readonly IMapper _mapper;
@@ -18,7 +18,7 @@ namespace NLayer.API.Controllers
             _mapper = mapper;
             _service = productService;
         }
-
+        //ctrl+m+o ctrl+m+l
         [HttpGet("[action]")]
         public async Task<IActionResult> GetProductsWithCategory()
         {
