@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using NLayer.Core.DTOs;
 
 namespace NLayer.API.Controllers
@@ -14,7 +13,7 @@ namespace NLayer.API.Controllers
             if (response.StatusCode == 204)
                 return new ObjectResult(null)
                 {
-                    StatusCode=response.StatusCode
+                    StatusCode = response.StatusCode
                 };
 
             return new ObjectResult(response)

@@ -19,14 +19,14 @@ namespace NLayer.API.Filters
         {
             var idValue = context.ActionArguments.Values.FirstOrDefault();
 
-            if(idValue == null)
+            if (idValue == null)
             {
                 await next();
                 return;
             }
             var id = (int)idValue;
-            var anyEntity = await _service.AnyAsync(x=>x.Id==id);
-            
+            var anyEntity = await _service.AnyAsync(x => x.Id == id);
+
             if (anyEntity)
             {
                 await next.Invoke();
@@ -34,8 +34,8 @@ namespace NLayer.API.Filters
             }
 
             context.Result = new NotFoundObjectResult(CustomResponseDto<NoContentDto>.Fail(404, $"{typeof(T).Name} ({id} not found)"));
-                
-           
+
+
         }
     }
 }
